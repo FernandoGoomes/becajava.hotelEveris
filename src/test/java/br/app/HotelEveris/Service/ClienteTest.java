@@ -1,6 +1,6 @@
 package br.app.HotelEveris.Service;
 
-import java.util.Random;
+
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.app.HotelEveris.request.ClienteRequest;
 import br.app.HotelEveris.response.BaseResponse;
 import br.app.HotelEveris.response.ClienteResponse;
-import br.app.HotelEveris.response.ComodidadeResponse;
 import br.app.HotelEveris.service.ClienteService;
 
 @SpringBootTest
@@ -31,7 +30,7 @@ public class ClienteTest {
 		request.setHash("TE456DO");
 		
 
-		BaseResponse response = service.inserir(request);
+		BaseResponse response = service.criar(request);
 
 		Assertions.assertEquals(201, response.statusCode);
 		Assertions.assertEquals("Cliente foi criado com sucesso", response.message);
@@ -50,7 +49,7 @@ public class ClienteTest {
 		request.setNome("");
 		request.setHash("sdsdsdsds");
 
-		BaseResponse response = service.inserir(request);
+		BaseResponse response = service.criar(request);
 
 		Assertions.assertEquals(400, response.statusCode);
 		Assertions.assertEquals("insira um nome  e tente novamente", response.message);
@@ -66,7 +65,7 @@ public class ClienteTest {
 		request.setNome("Freed");
 		request.setHash("sdsdsdsds");
 
-		BaseResponse response = service.inserir(request);
+		BaseResponse response = service.criar(request);
 
 		Assertions.assertEquals(400, response.statusCode);
 		Assertions.assertEquals("insira um cpf e tente novamente", response.message);
@@ -82,7 +81,7 @@ public class ClienteTest {
 		request.setNome("Freed");
 		request.setHash("");
 
-		BaseResponse response = service.inserir(request);
+		BaseResponse response = service.criar(request);
 
 		Assertions.assertEquals(400, response.statusCode);
 		Assertions.assertEquals("insira um hash e tente novamente", response.message);

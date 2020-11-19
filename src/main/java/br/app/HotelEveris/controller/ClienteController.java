@@ -25,7 +25,7 @@ public class ClienteController extends BaseController {
 	@PostMapping
 	public ResponseEntity<BaseResponse> criar(@RequestBody ClienteRequest request) {
 		try {
-			BaseResponse response = service.inserir(request);
+			BaseResponse response = service.criar(request);
 			return ResponseEntity.status(response.statusCode).body(response);
 		} catch (Exception e) {
 

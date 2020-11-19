@@ -114,11 +114,11 @@ public class QuartoTest {
 	}
 	
 	@Test
-	public void obtertipoquarto() {
+	public void obterlista() {
 		
 		Long id = 2L;
 		
-	QuartoListResponse response = service.obterdenovo(id);
+	QuartoListResponse response = service.obterlista(id);
 		
 
 		Assertions.assertEquals(200, response.statusCode);

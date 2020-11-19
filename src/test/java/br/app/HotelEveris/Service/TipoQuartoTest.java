@@ -25,7 +25,7 @@ public class TipoQuartoTest {
 		request.setValor(120);
 		request.setDescricao("Luxo");
 
-		BaseResponse response = service.inserir(request);
+		BaseResponse response = service.criar(request);
 
 		Assertions.assertEquals(201, response.statusCode);
 		Assertions.assertEquals("tipo de quarto inserido.", response.message);
@@ -38,7 +38,7 @@ public class TipoQuartoTest {
 		request.setValor(0);
 		request.setDescricao("Luxo");
 
-		BaseResponse response = service.inserir(request);
+		BaseResponse response = service.criar(request);
 
 		Assertions.assertEquals(400, response.statusCode);
 		Assertions.assertEquals("Valor incopartivel tente novamente", response.message);
@@ -53,7 +53,7 @@ public class TipoQuartoTest {
 		request.setValor(20);
 		request.setDescricao("");
 
-		BaseResponse response = service.inserir(request);
+		BaseResponse response = service.criar(request);
 
 		Assertions.assertEquals(400, response.statusCode);
 		Assertions.assertEquals("Descricao vazia tente novamente", response.message);
@@ -122,15 +122,7 @@ public class TipoQuartoTest {
     
     }
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

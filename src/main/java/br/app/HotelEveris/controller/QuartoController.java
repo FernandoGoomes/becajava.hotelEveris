@@ -47,9 +47,9 @@ public class QuartoController extends BaseController {
 	}
 
 	@GetMapping(path = "/{id}/obterdenovo")
-	public ResponseEntity<BaseResponse> obterdenovo(@PathVariable Long id) {
+	public ResponseEntity<BaseResponse> obterlista(@PathVariable Long id) {
 		try {
-			BaseResponse response = service.obterdenovo(id);
+			BaseResponse response = service.obterlista(id);
 			return ResponseEntity.status(response.statusCode).body(response);
 		} catch (Exception e) {
 			return ResponseEntity.status(errorBase.statusCode).body(errorBase);
